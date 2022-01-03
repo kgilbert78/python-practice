@@ -51,6 +51,7 @@ for title in input_categories_lists:
 title_choice = int(input("\nPlease enter the number next to one of them to choose it: \n")) - 1
 
 print("You chose " + (input_categories_lists[title_choice])[0] + ".")
+chosen_title_text_list = text_list[title_choice]
 
 # make this more readable
 chosen_title_categories_list = (input_categories_lists[title_choice])[1:len(input_categories_lists[title_choice])]
@@ -58,15 +59,28 @@ chosen_title_categories_list = (input_categories_lists[title_choice])[1:len(inpu
 user_prompt_list = format_prompts("Please enter a word that fits the category ", chosen_title_categories_list, ": ")
 # make format_prompts a method within the class once I create the class
 
-user_input_list = []
+user_input_list = chosen_title_categories_list # temp for testing (real code below)
+# user_input_list = []
+# for category in user_prompt_list:
+#     user_input = input(category)
+#     user_input_list.append(user_input)
+#     # before adding NLP, add basic checks that user entered something, and for "verb ending in ing" it has "ing" as the last 3 letters etc.
+# print(user_input_list)
 
-for category in user_prompt_list:
-    user_input = input(category)
-    user_input_list.append(user_input)
-    # before adding NLP, add basic checks that user entered something, and for "verb ending in ing" it has "ing" as the last 3 letters etc.
-print(user_input_list)
 
 # Print interspersed list to screen as concatenated string.
+completed_madlib_list = chosen_title_text_list.copy()
+
+    # for each item in user_input_list, match the index of that item to the (unstringified) number in the chosen_title_text_list that equals that item's index number.
+
+for i in range(len(user_input_list)):
+    for j in range(len(completed_madlib_list)):
+        if str(i) == completed_madlib_list[j]:
+            completed_madlib_list[j] = user_input_list[i]
+print(completed_madlib_list)
+
+    # format to print nicely to screen
+
 
 # Option to save concatenated string as a text file?
 
