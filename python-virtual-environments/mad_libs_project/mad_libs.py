@@ -77,10 +77,11 @@ for i in range(len(user_input_list)):
     for j in range(len(completed_madlib_list)):
         if str(i) == completed_madlib_list[j]:
             completed_madlib_list[j] = user_input_list[i]
-print(completed_madlib_list)
 
     # format to print nicely to screen
-
+completed_madlib = " ".join(completed_madlib_list) # some numbers still printing!
+# add conditions to eliminate spaces before punctuation and interpret \n instead of printing it.
+print(completed_madlib)
 
 # Option to save concatenated string as a text file?
 
