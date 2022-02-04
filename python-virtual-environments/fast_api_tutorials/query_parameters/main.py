@@ -41,6 +41,7 @@ async def read_item_conv(item_id: str, q: Optional[str] = None, short: bool = Fa
     item = {"item_id": item_id}
     if q:
         item.update({"q": q})
+        # python method to modify contents of dict: https://www.w3schools.com/python/ref_dictionary_update.asp
     if not short:
         item.update(
             {"description": "This is an amazing item that has a long description"}
