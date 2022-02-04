@@ -72,21 +72,6 @@ async def create_item_3params(item_id: int, item: Item, q: Optional[str] = None)
     database.append(result) # I added for testing
     return result
 
-# also skip ahead to here https://fastapi.tiangolo.com/tutorial/body-updates/ so I can build ip-address-3 with put endpoint? might also need to do https://fastapi.tiangolo.com/tutorial/encoder/ first. and cors: https://fastapi.tiangolo.com/tutorial/cors/ ...then go back to stuff in between.
-
-
-@server.get("/items-type-conv/{item_id}")
-async def read_item_conv(item_id: str, q: Optional[str] = None, short: bool = False):
-    item = {"item_id": item_id}
-    if q:
-        item.update({"q": q})
-        # python method to modify contents of dict: https://www.w3schools.com/python/ref_dictionary_update.asp
-    if not short:
-        item.update(
-            {"description": "This is an amazing item that has a long description"}
-        )
-    return item
-
     # Postman: http://localhost:8000/items/3?q=testing
     # {
     #     "item_id": 3,
