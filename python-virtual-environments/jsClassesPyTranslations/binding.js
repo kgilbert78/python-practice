@@ -1,7 +1,7 @@
 // explanation of this from example class component in react docs
 // https://reactjs.org/docs/forms.html
 
-class NameForm extends React.Component {
+class NameForm extends React.Component { // class NameForm(React.Component):
     constructor(props) { // def __init__(self, props):
         super(props); // super().__init__(props)
         this.state = { value: '' }; // self.state = { 'value': ''}
