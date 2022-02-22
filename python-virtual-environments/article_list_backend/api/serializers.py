@@ -48,7 +48,7 @@ class ArticleSerializer(serializers.ModelSerializer):
     # json
 
     # # convert json back to python (dict of validated data) and check validation:
-                # # https://docs.python.org/3/library/io.html
+                # # https://docs.python.org/3/library/io.html, https://www.django-rest-framework.org/api-guide/serializers/#deserializing-objects
     # import io
     # stream = io.BytesIO(json)
     # data = JSONParser().parse(stream)
