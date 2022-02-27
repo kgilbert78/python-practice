@@ -79,8 +79,8 @@ for i in range(len(user_input_list)):
             completed_madlib_list[j] = user_input_list[i]
 
     # format to print nicely to screen
-completed_madlib = " ".join(completed_madlib_list) # some numbers still printing!
-# add conditions to eliminate spaces before punctuation and interpret \n instead of printing it.
+completed_madlib = " ".join(completed_madlib_list) 
+# add conditions to eliminate spaces before punctuation and interpret \n or \" instead of printing it.
 print(completed_madlib)
 
 # Option to save concatenated string as a text file?
