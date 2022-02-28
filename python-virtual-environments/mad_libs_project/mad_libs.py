@@ -16,32 +16,34 @@ def format_prompts(prepend_str, list, append_str):
 
 
 # Create MadLib class, each instance will be one mad lib.
+class MadLib:
+    def __init__(self):
+        pass
+
+    # def get_input_categories():
+        # ...create from code under "In each instance, create list of requirements (adjective, noun, etc) from CSV data."
+
+    # def choose_title():
+        # ... create from code under "Get user's inputs for each requirement and save them to a new list at the same indexes as their requirements."
+
+    # def get_text_list():
+        # create from code under "In each instance, create list of strings for text between blanks, interspersed with numbers..."
+        # only get for chosen title? YES - implemented below without classes yet.
+
+    # def format_prompts(prepend_str, list, append_str):
+        # ...copy from above
 
 
 # In each instance, create list of requirements (adjective, noun, etc) from CSV data. 
+
+# QUESTION: Is it better to open the input categories file only once and take all the data including some I won't use, or open the file for only the titles (first entry in each row) and then re-open it again later for the data associated with the title the user chooses?
 
 input_categories_lists = []
 with open(csv_input_categories, newline='') as csvfile_categories:
     csvreader_categories = csv.reader(csvfile_categories, delimiter=',')
     for row in csvreader_categories:
         input_categories_lists.append(row)
-# print("\n", "INPUT CATEGORIES LIST:", "\n", "\n", input_categories_list)
-
-# In each instance, create list of strings for text between blanks, interspersed with numbers each representing the index of the category on the requirements list, from CSV data.
-
-text_list = []
-with open(csv_text, newline='') as csvfile_text:
-    csvreader_text = csv.reader(csvfile_text, delimiter=',')
-    for row in csvreader_text:
-        text_list.append(row)
-# print("\n", "TEXT LIST:", "\n", "\n", text_list)
-
-
-## TEST OF PRINTING OUT FULL TEXT WITH NUMBERS WHERE USER INPUT GOES
-# with open(csv_text, newline='') as csvfile__print_text:
-#     csvreader__print_text = csv.reader(csvfile__print_text, delimiter=',')
-#     for row in csvreader__print_text:
-#         print("\n", "TEXT AS STRING:", "\n", "\n", ' '.join(row))
+# print("\n", "INPUT CATEGORIES LIST:", "\n", "\n", input_categories_lists)
 
 
 # Get user's inputs for each requirement and save them to a new list at the same indexes as their requirements.
@@ -51,7 +53,30 @@ for title in input_categories_lists:
 title_choice = int(input("\nPlease enter the number next to one of them to choose it: \n")) - 1
 
 print("You chose " + (input_categories_lists[title_choice])[0] + ".")
-chosen_title_text_list = text_list[title_choice]
+
+# In each instance, create list of strings for text between blanks, interspersed with numbers each representing the index of the category on the requirements list, from CSV data.
+
+text_list = []
+with open(csv_text, newline='') as csvfile_text:
+    csvreader_text = csv.reader(csvfile_text, delimiter=',')
+    # https://realpython.com/python-enumerate/
+    for count, row in enumerate(csvreader_text):
+        if count == title_choice:
+            text_list = row
+    # for row in csvreader_text:
+    #     text_list.append(row)
+print("\n", "TEXT LIST:", "\n", "\n", text_list)
+
+
+## TEST OF PRINTING OUT FULL TEXT WITH NUMBERS WHERE USER INPUT GOES
+# with open(csv_text, newline='') as csvfile__print_text:
+#     csvreader__print_text = csv.reader(csvfile__print_text, delimiter=',')
+#     for row in csvreader__print_text:
+#         print("\n", "TEXT AS STRING:", "\n", "\n", ' '.join(row))
+
+
+# moved "# Get user's inputs for each requirement and save them to a new list at the same indexes as their requirements." from here
+# chosen_title_text_list = text_list[title_choice]
 
 # make this more readable
 chosen_title_categories_list = (input_categories_lists[title_choice])[1:len(input_categories_lists[title_choice])]
@@ -69,7 +94,8 @@ user_input_list = chosen_title_categories_list # temp for testing (real code bel
 
 
 # Print interspersed list to screen as concatenated string.
-completed_madlib_list = chosen_title_text_list.copy()
+# completed_madlib_list = chosen_title_text_list.copy()
+completed_madlib_list = text_list.copy()
 
     # for each item in user_input_list, match the index of that item to the (unstringified) number in the chosen_title_text_list that equals that item's index number.
 
