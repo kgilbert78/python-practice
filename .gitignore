@@ -10,4 +10,6 @@ python-virtual-environments/reference/
 backup/
 python-virtual-environments/zelle_textbook/ch5/messages.txt
 python-virtual-environments/wimlds/data/
-python-virtual-environments/mad_libs_project/data/
+python-virtual-environments/fast_api_tutorials/reference/
+__pycache__/
+/Users/kylegilbert/Desktop/Density/config-update-interface-app/config-update-interface-backend/ip-address-3/__pycache__

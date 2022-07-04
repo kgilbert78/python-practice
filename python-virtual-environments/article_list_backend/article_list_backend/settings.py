@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework', #step7 - https://www.django-rest-framework.org/tutorial/1-serialization/
+    'rest_framework', #step-7 - https://www.django-rest-framework.org/tutorial/1-serialization/
     'api', #step-4... then makemigrations and look at fields in api/migrations 0001, then migrate and refresh Beekeeper
 ]
 

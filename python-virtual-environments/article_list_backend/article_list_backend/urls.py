@@ -36,6 +36,7 @@ urlpatterns = [
 # urlpatterns = [
 #     path('admin/', admin.site.urls),
 
+    #step-1b
 #     # display views - blank path for landing page then name of imported file
 #     path('', Index)
 # ]

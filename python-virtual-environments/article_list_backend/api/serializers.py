@@ -57,11 +57,11 @@ class ArticleSerializer(serializers.ModelSerializer):
     # serializer.validated_data
 
 
-#step-10 (second way)
-    # from api.models import Article
-    # from api.serializers import ArticleSerializer
+# step-10 (second way)
+#     from api.models import Article
+#     from api.serializers import ArticleSerializer
     
-    # serializer = ArticleSerializer()
+#     serializer = ArticleSerializer()
 
-    # # print a representation of the serializer
-    # print(repr(serializer))
+#     # print a representation of the serializer
+#     print(repr(serializer))
