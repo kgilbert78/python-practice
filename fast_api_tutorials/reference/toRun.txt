@@ -1,0 +1,13 @@
+To run any of the examples, copy the code to a file main.py, and start uvicorn with:
+uvicorn main:app --reload
+(or replace app with server or other name given to instance of FastAPI in main.py)
+uvicorn main:server --reload
+
+point browser to http://127.0.0.1:8000/ OR http://localhost:8000/
+
+Docs:
+http://localhost:8000/docs
+http://localhost:8000/redoc
+
+OpenAPI Schema:
+http://localhost:8000/openapi.json

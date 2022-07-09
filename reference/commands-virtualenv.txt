@@ -1,0 +1,29 @@
+ACTIVATE VIRTUAL ENVIRONMENT:
+source python397/bin/activate
+    from chapter folder in zelle_textbook: ../../python396/bin/activate
+
+CREATE A VIRTUAL ENVIRONMENT (with filepath starting from top of computer at ~ and called test-project):
+virtualenv ~/.virtualenv/test-project
+
+PIP INSTALL FROM REQUIREMENTS FILE:
+Activate virtual environment
+pip install -r requirements.txt
+
+CREATE A VIRTUAL ENVIRONMENT WITH A SPECIFIC PYTHON VERSION
+format: virtualenv --python=/usr/bin/<pythonVersion> <path/to/new/virtualenv/> 
+    MAY NEED TO CHANGE FILE PATH AFTER --python= 
+
+    ACTIVATE THE VIRTUAL ENVIRONMENT ABOVE:
+    source ~/.virtualenv/test-project/bin/activate
+
+    RECORD OF CREATING python396 VIRTUALENV (incl. prompt w/location):
+    pwd: /Users/kylegilbert/Desktop/CiC/cic-kyles-code/Python/python-virtual-environments
+    kylegilbert@Kyles-MacBook-Pro python-virtual-environments % virtualenv --python=/usr/local/bin/python3.9 ./python396 
+
+        Used format from https://stackoverflow.com/questions/1534210/use-different-python-version-with-virtualenv
+            virtualenv --python=/usr/bin/<pythonVersion> <path/to/new/virtualenv/> 
+        ...but added /local/ to version's path based on location recorded in allMyPythons file. 
+
+        Created python397: 
+        pwd: /Users/kylegilbert/Desktop/CiC/cic-kyles-code/Python/python-virtual-environments
+        kylegilbert@Kyles-MacBook-Pro python-virtual-environments % virtualenv --python=/opt/homebrew/bin/python3 ./python397

@@ -1,0 +1,8 @@
+Chapter 10, program on pages 329-331:
+
+    I replicated the student file on page 328 in a .txt file but when I ran my version of the program it gave me the following error:
+        File "...../school.py", line 34, in makeStudent
+        id, lastName, firstName, hours, qpoints = infoStr.split("\t") 
+        ValueError: not enough values to unpack (expected 5, got 1)
+    I fixed it by using commas to separate the names & values instead of tabs, and then changing the split() parameter to a comma. But why doesn't it recognize the tabs that I typed and how could I fix that?
+    

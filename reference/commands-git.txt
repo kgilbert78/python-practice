@@ -1,0 +1,13 @@
+CHECK IF LOCAL REPO IS UP TO DATE WITH GITHUB OR IF PULL NEEDED:
+1) git remote update
+2) git status -uno
+
+SEE LOCAL COMMITS NOT PUSHED:
+1)  git fetch
+2)  git log origin/main..HEAD (to see date & commit message)
+    OR
+    git diff origin/main..HEAD (to see file name/path and 1st part of file's text)
+    ... then type q to get out of : 
+
+FILE PATH FROM OPENING TERMINAL:
+cd Desktop/CiC/python-practice/python-virtual-environments
