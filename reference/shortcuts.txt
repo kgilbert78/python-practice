@@ -1,7 +1,0 @@
-COUNT LINES IN FILE
-sum(1 for line in open('filename.ext'))
-
-SET OUTPUT TO 2 DECIMAL PLACES FOR CURRENCY
-"{:.2f}".format(<pass_$_amt_here>)
-Here we specify 2 digits of precision and f is used to represent floating point number.
---number before : sets "precision" & error when not 0 says tuple index out of range ???
