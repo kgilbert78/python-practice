@@ -1,51 +1,51 @@
 # linear search for use in unsorted list
-def isIn(myList, valueToFind):
+def is_in(my_list, value_to_find):
     i = 0
-    while (i<len(myList)):
-        if myList[i] == valueToFind:
+    while (i<len(my_list)):
+        if my_list[i] == value_to_find:
             return True
         else:
             i+=1
     return False
 
 # binary search more efficient for sorted list
-def binaryIn(myList, valueToFind):
-    if len(myList) < 1:
+def binary_in(my_list, value_to_find):
+    if len(my_list) < 1:
         return False
     low = 0
-    high = len(myList)-1
-    if myList[low] == valueToFind or myList[high] == valueToFind:
+    high = len(my_list)-1
+    if my_list[low] == value_to_find or my_list[high] == value_to_find:
         return True
     while low < (high-1):
         midpoint = low + (high-low) // 2 #integer division (drops remainder)
-        if myList[midpoint] == valueToFind:
+        if my_list[midpoint] == value_to_find:
             return True
-        elif myList[midpoint] < valueToFind:
+        elif my_list[midpoint] < value_to_find:
             low = midpoint
         else:
             high = midpoint
     return False
 
 # search that returns location of value found (or invalid index)
-def binaryRtnIndexIn(myList, valueToFind):
-    if len(myList) < 1:
+def binaryRtnIndexIn(my_list, value_to_find):
+    if len(my_list) < 1:
         return False
     low = 0
-    high = len(myList)-1
-    if myList[low] == valueToFind:
+    high = len(my_list)-1
+    if my_list[low] == value_to_find:
         return low
-    elif myList[high] == valueToFind:
+    elif my_list[high] == value_to_find:
         return high
     while low < (high-1):
         midpoint = low + (high-low) // 2 #integer division (drops remainder)
-        if myList[midpoint] == valueToFind:
+        if my_list[midpoint] == value_to_find:
             return midpoint
-        elif myList[midpoint] < valueToFind:
+        elif my_list[midpoint] < value_to_find:
             low = midpoint
         else:
             high = midpoint
     return -1
 
 favorite_foods = ['barbeque', 'chicken and dumplings', 'gumbo', 'ice cream', 'pecan pie', 'pizza']
-print(binaryIn(favorite_foods, 'gumbo'))
-print(binaryIn(favorite_foods, 'coconut'))
+print(binary_in(favorite_foods, 'gumbo'))
+print(binary_in(favorite_foods, 'coconut'))
